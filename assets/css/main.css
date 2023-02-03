@@ -1,6 +1,7 @@
 :root {
     --radius: 8px;
     --margin: 15px;
+    --border-color: rgba(0, 0, 0, 0.3);
 }
 
 @font-face {
@@ -15,14 +16,25 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    font-weight: 600 !important;
+}
+
 textarea {
+    resize: none;
     width: 100%;
     min-height: 200px;
     max-height: 500px;
     font-weight: 600;
     border-radius: var(--radius);
     padding: 5px 10px;
-    margin-top: var(--margin)
+    margin-top: var(--margin);
+    border: solid 1px var(--border-color);
+}
+
+.ge {
+    cursor: text;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .copy-parent {
@@ -37,10 +49,11 @@ textarea {
 
 button {
     font-weight: 600 !important;
+    font-size: 1.2rem !important;
 }
 
 .foot {
     margin: var(--margin) 0;
     padding: 5px 0;
-    border-top: 1px solid#444;
+    border-top: 1px solid var(--border-color);
 }

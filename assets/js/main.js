@@ -47,16 +47,16 @@ $(document).ready(function () {
 
     $('.la').on('input', function () {
 
+        $('.copy').text('კოპირება');
+
         let la = $(this).val();
         let ge = $('.ge');
 
         let re;
 
-        if ($('#sh-tab').hasClass('active') || $('#all-tab').hasClass('active')) {
-            for (let elem in sh) {
-                re = new RegExp(`${elem}`, 'g');
-                la = la.replace(re, sh[elem]);
-            }
+        for (let elem in sh) {
+            re = new RegExp(`${elem}`, 'g');
+            la = la.replace(re, sh[elem]);
         }
 
         let las = la.split('');
@@ -90,7 +90,13 @@ $(document).ready(function () {
         let clipboardText = "";
         clipboardText = $('.ge').val();
         copyToClipboard(clipboardText);
-        alert("Copied to Clipboard");
+        $(this).text('დაკოპირებულია');
+
+        $('.ge').css('background-color', 'rgba(147, 197, 75, 0.2)');
+
+        setTimeout(function () {
+            $('.ge').css('background-color', 'rgba(0, 0, 0, 0.05)');
+        }, 1200);
     });
 
 })
