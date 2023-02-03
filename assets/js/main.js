@@ -45,6 +45,8 @@ $(document).ready(function () {
         gh: "R"
     }
 
+    let bracket = 0;
+
     $('.la').on('input', function () {
 
         $('.copy').text('კოპირება');
@@ -58,6 +60,10 @@ $(document).ready(function () {
             re = new RegExp(`${elem}`, 'g');
             la = la.replace(re, sh[elem]);
         }
+
+        // brachets
+        bracket++;
+        bracket % 2 !== 0 ? la = la.replace(/"/g, '„') : la = la.replace(/"/g, '“')
 
         let las = la.split('');
         let ges = [];
@@ -89,6 +95,10 @@ $(document).ready(function () {
     $('.copy').click(function () {
         let clipboardText = "";
         clipboardText = $('.ge').val();
+        if ($('.ge').val() == "") {
+            alert('რა დავაკოპირო? არაფერი გიწერია');
+            return;
+        }
         copyToClipboard(clipboardText);
         $(this).text('დაკოპირებულია');
 
