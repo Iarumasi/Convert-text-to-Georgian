@@ -1,0 +1,46 @@
+:root {
+    --radius: 8px;
+    --margin: 15px;
+}
+
+@font-face {
+    font-family: n;
+    src: url('../fonts/bpg_nateli.ttf');
+}
+
+body {
+    font-family: n;
+    font-weight: 600;
+    font-size: 1.2rem;
+    min-height: 100vh;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    max-height: 500px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    margin-top: var(--margin)
+}
+
+.copy-parent {
+    position: relative;
+}
+
+.copy {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+
+button {
+    font-weight: 600 !important;
+}
+
+.foot {
+    margin: var(--margin) 0;
+    padding: 5px 0;
+    border-top: 1px solid#444;
+}
