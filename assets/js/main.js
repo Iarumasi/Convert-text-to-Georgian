@@ -70,6 +70,11 @@ $(document).ready(function () {
         GH: "R"
     }
 
+    $('.nav-link').on('click', function () {
+        $('.la').text("");
+        $('.ge').text("");
+    })
+
     String.prototype.replaceAt = function (index, replacement) {
         return this.substring(0, index) + replacement + this.substring(index + replacement.length);
     }
@@ -85,9 +90,15 @@ $(document).ready(function () {
 
         let re;
 
-        for (let elem in sh) {
-            re = new RegExp(`${elem}`, 'g');
-            la = la.replace(re, sh[elem]);
+        if ($('.sh-tab').hasClass('active')) {
+            la = la.toLowerCase();
+        }
+
+        if ($('.all-tab').hasClass('active') || $('.sh-tab').hasClass('active')) {
+            for (let elem in sh) {
+                re = new RegExp(`${elem}`, 'g');
+                la = la.replace(re, sh[elem]);
+            }
         }
 
         // brachets
