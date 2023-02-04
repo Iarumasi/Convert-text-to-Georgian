@@ -52,25 +52,25 @@ $(document).ready(function () {
         Q: "ქ",
         Y: "ყ",
         X: "ხ",
-        H: "ჰ",
+        H: "ჰ"
     }
 
     let sh = {
         sh: "S",
-        SH: "S",
         ch: "C",
-        CH: "C",
         ts: "c",
-        TS: "c",
         zh: "J",
-        ZH: "J",
         dz: "Z",
-        DZ: "Z",
         gh: "R",
+        SH: "S",
+        CH: "C",
+        TS: "c",
+        ZH: "J",
+        DZ: "Z",
         GH: "R"
     }
 
-    let bracket = 0;
+    // let br = false;
 
     $('.la').on('input', function () {
 
@@ -87,8 +87,17 @@ $(document).ready(function () {
         }
 
         // brachets
-        bracket++;
-        bracket % 2 !== 0 ? la = la.replace(/"/g, '„') : la = la.replace(/"/g, '“')
+        // if (la.includes('"')) {
+        //     if (br) {
+        //         console.log('2');
+        //         br = false;
+        //     } else {
+        //         // la = la.replace(/"$/, ",,")
+        //         la = la.slice(0, -1) + '_'
+        //         console.log('1');
+        //         br = true;
+        //     }
+        // }
 
         let las = la.split('');
         let ges = [];
@@ -98,6 +107,7 @@ $(document).ready(function () {
         })
 
         ge.text(ges);
+        $('.stats').html(`სიმბოლოების რაოდენობა: <b>${ges.length}</b> | სიტყვების რაოდენობა: <b>${ges.split(' ').length}</b>`);
     })
 
     function copyToClipboard(text) {
