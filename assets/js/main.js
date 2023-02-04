@@ -34,15 +34,40 @@ $(document).ready(function () {
         x: "ხ",
         j: "ჯ",
         h: "ჰ",
+        A: "ა",
+        B: "ბ",
+        G: "გ",
+        D: "დ",
+        E: "ე",
+        V: "ვ",
+        I: "ი",
+        K: "კ",
+        L: "ლ",
+        M: "მ",
+        N: "ნ",
+        O: "ო",
+        P: "პ",
+        U: "უ",
+        F: "ფ",
+        Q: "ქ",
+        Y: "ყ",
+        X: "ხ",
+        H: "ჰ",
     }
 
     let sh = {
         sh: "S",
+        SH: "S",
         ch: "C",
+        CH: "C",
         ts: "c",
+        TS: "c",
         zh: "J",
+        ZH: "J",
         dz: "Z",
-        gh: "R"
+        DZ: "Z",
+        gh: "R",
+        GH: "R"
     }
 
     let bracket = 0;
