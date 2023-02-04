@@ -20,9 +20,16 @@ h1 {
     font-weight: 600 !important;
 }
 
+.toper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dfd7ca;
+}
+
 .nav-tabs .nav-link {
     font-weight: 600;
     font-size: 1.2rem;
+    border-bottom: 0;
 }
 
 textarea {
@@ -35,7 +42,7 @@ textarea {
     padding: 5px 10px;
     margin-top: var(--margin);
     border: solid 1px var(--border-color);
-    transition: 0.7s;
+    transition: 0.5s;
 }
 
 textarea:focus {

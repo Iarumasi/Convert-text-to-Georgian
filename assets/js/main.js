@@ -136,6 +136,10 @@ $(document).ready(function () {
 
     })
 
+    $('#magic').on('click', function () {
+        $(".ge").text($('.ge').val().replace(/(\r\n|\n|\r)/gm, " "));
+    })
+
     function copyToClipboard(text) {
 
         var textArea = document.createElement("textarea");
