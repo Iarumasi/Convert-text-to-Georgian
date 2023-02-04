@@ -87,8 +87,11 @@ b {
     .foot .copyright {
         margin-top: var(--margin);
     }
+}
 
-    b {
-        margin-right: calc(var(--margin) + 50px);
+@media screen and (max-width: 991px) {
+    .stats {
+        display: flex;
+        flex-direction: column;
     }
 }
