@@ -30,6 +30,7 @@ textarea {
     padding: 5px 10px;
     margin-top: var(--margin);
     border: solid 1px var(--border-color);
+    transition: 0.7s;
 }
 
 textarea:focus {
@@ -57,15 +58,25 @@ button {
     font-size: 1.2rem !important;
 }
 
-b{
-    color: black;
-    background-color: aquamarine;
-    border-radius: 25rem;
-    padding: 5px 10px;
+b {
+    margin-right: var(--margin);
 }
 
 .foot {
-    margin: var(--margin) 0;
-    padding: 5px 0;
-    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .foot {
+        flex-direction: column;
+    }
+
+    .foot .copyright {
+        margin-top: var(--margin);
+    }
+
+    b {
+        margin-right: calc(var(--margin) + 50px);
+    }
 }

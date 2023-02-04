@@ -70,7 +70,11 @@ $(document).ready(function () {
         GH: "R"
     }
 
-    // let br = false;
+    String.prototype.replaceAt = function (index, replacement) {
+        return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+    }
+
+    let br = true;
 
     $('.la').on('input', function () {
 
@@ -87,17 +91,22 @@ $(document).ready(function () {
         }
 
         // brachets
-        // if (la.includes('"')) {
-        //     if (br) {
-        //         console.log('2');
-        //         br = false;
-        //     } else {
-        //         // la = la.replace(/"$/, ",,")
-        //         la = la.slice(0, -1) + '_'
-        //         console.log('1');
-        //         br = true;
-        //     }
-        // }
+        let brs = [];
+
+        for (let brI = 0; brI < la.length; brI++) {
+            if (la[brI] == '"') {
+                brs.push(brI);
+            }
+        }
+
+        for (let el in brs) {
+            if (el % 2 == 0) {
+                la = la.replaceAt(brs[el], "„");
+            } else {
+                la = la.replaceAt(brs[el], "“");
+            }
+
+        }
 
         let las = la.split('');
         let ges = [];
@@ -107,7 +116,13 @@ $(document).ready(function () {
         })
 
         ge.text(ges);
-        $('.stats').html(`სიმბოლოების რაოდენობა: <b>${ges.length}</b> | სიტყვების რაოდენობა: <b>${ges.split(' ').length}</b>`);
+        if (!ges.length == 0) {
+            $('.stats').html(`სიმბოლოების რაოდენობა: <b>${ges.length}</b> სიტყვების რაოდენობა: <b>${ges.split(' ').length}</b>`);
+        }
+        else {
+            $('.stats').empty();
+        }
+
     })
 
     function copyToClipboard(text) {
@@ -131,7 +146,7 @@ $(document).ready(function () {
         let clipboardText = "";
         clipboardText = $('.ge').val();
         if ($('.ge').val() == "") {
-            alert('რა დავაკოპირო? არაფერი გიწერია');
+            alert('რა დავაკოპირო? არაფერი გიწერია 🤔');
             return;
         }
         copyToClipboard(clipboardText);
