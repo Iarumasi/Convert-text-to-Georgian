@@ -96,3 +96,17 @@ b {
         flex-direction: column;
     }
 }
+
+@media screen and (max-width: 360px) {
+    body, .nav-tabs .nav-link, button {
+        font-size: 1rem !important;
+    }
+
+    .toper {
+        flex-direction: column;
+    }
+
+    .top-btns {
+        text-align: right;
+    }
+}
