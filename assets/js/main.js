@@ -136,8 +136,12 @@ $(document).ready(function () {
 
     })
 
-    $('#magic').on('click', function () {
+    $('#enters').on('click', function () {
         $(".ge").text($('.ge').val().replace(/(\r\n|\n|\r)/gm, " "));
+    })
+
+    $('#spaces').on('click', function () {
+        $(".ge").text($('.ge').val().replace(/ +(?= )/g, ''));
     })
 
     function copyToClipboard(text) {
