@@ -56,6 +56,8 @@ $(document).ready(function () {
     }
 
     let sh = {
+        tch: "W",
+        TCH: "W",
         sh: "S",
         ch: "C",
         ts: "c",
@@ -67,7 +69,7 @@ $(document).ready(function () {
         TS: "c",
         ZH: "J",
         DZ: "Z",
-        GH: "R"
+        GH: "R",
     }
 
     $('.nav-link').on('click', function () {
